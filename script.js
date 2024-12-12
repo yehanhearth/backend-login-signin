@@ -30,3 +30,25 @@ function send() {
     request.open("POST", "uRegister.php", true);
     request.send(form);
 }
+
+function  upload(){
+    var proType=document.getElementById("pName");
+    var qty=document.getElementById("qty");
+    var prodisc=document.getElementById("disc");
+    var price=document.getElementById("price");
+
+    var form=new FormData();
+    form.append("name",proType.value);
+    form.append("qty",qty.value);
+    form.append("disc",prodisc.value);
+    form.append("price",price.value);
+
+    var request=new XMLHttpRequest();
+    request.onreadystatechange=function () {
+        if (request.status==200 && request.readyState==4) {
+            alert(request.responseText);
+        }
+    }
+    request.open("POST","prupload.php",true);
+    request.send(form);
+}
