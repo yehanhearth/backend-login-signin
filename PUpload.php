@@ -21,8 +21,8 @@
     <label for="">Price</label>
     <input type="text" id="price">
 
-    <label for="">pr_img</label>
-    <input type="file" name="" id="">
+    <label for="images">Upload Images:</label>
+    <input type="file" name="images[]" id="images" multiple accept="image/*" required>
 
 <button onclick=" upload();">upload</button>
 <script src="script.js"></script>

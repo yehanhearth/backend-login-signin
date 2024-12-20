@@ -36,16 +36,18 @@ function  upload(){
     var qty=document.getElementById("qty");
     var prodisc=document.getElementById("disc");
     var price=document.getElementById("price");
-
+    var  img=document.getElementById("images");
     var form=new FormData();
     form.append("name",proType.value);
     form.append("qty",qty.value);
     form.append("disc",prodisc.value);
     form.append("price",price.value);
+    form.append("img",img.files[0]);
 
     var request=new XMLHttpRequest();
     request.onreadystatechange=function () {
         if (request.status==200 && request.readyState==4) {
+            document.getElementById("img_view");
             alert(request.responseText);
         }
     }
